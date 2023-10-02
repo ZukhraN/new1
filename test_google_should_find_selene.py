@@ -2,6 +2,15 @@ from selene.support.shared import browser
 from selene import be, have
 
 
-browser.open('https://google.com')
-browser.element('[name="q"]').should(be.blank).type('yashaka/selene').press_enter()
-browser.element('[id="search"]').should(have.text('Selene - User-oriented Web UI browser tests in Python'))
+def test_find_in_the_browser(open_browser):
+
+    browser.open('https://google.com')
+    browser.element('[name="q"]').should(be.blank).type('yashaka/selene').press_enter()
+    browser.element('[id="search"]').should(have.text('yashaka/selene: User-oriented Web UI browser'))
+
+def test_new_find(open_browser):
+
+    browser.open('https://google.com')
+    browser.element('[name="q"]').should(be.blank).type('bcbvjcnkcm').press_enter()
+    browser.element('#extabar #result-stats').should(have.text('Результатов: примерно 0'))
+
