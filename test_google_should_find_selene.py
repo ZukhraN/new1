@@ -11,6 +11,6 @@ def test_find_in_the_browser(open_browser):
 def test_new_find(open_browser):
 
     browser.open('https://google.com')
-    browser.element('[name="q"]').should(be.blank).type('bcbvjcjnxjnjnxnkcm!!!').press_enter()
+    browser.element('[name="q"]').should(be.blank).type('!!!bcbvjcjnxjnjnxnkcm').press_enter()
     browser.element('#extabar #result-stats').should(have.text('Результатов: примерно 0'))
 
