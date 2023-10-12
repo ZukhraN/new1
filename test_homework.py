@@ -1,3 +1,5 @@
+import random
+
 
 def test_greeting():
     """
@@ -54,13 +56,15 @@ def test_random_list():
     """
     Создайте список из 10 случайных чисел от 1 до 100 и отсортируйте его по возрастанию.
     """
+    from random import randint
 
     # TODO создайте список
-    l = [1, 5, 87, 34, 21, 56, 99, 32, 8, 2]
 
+    l = list(range(9))
+
+    l.append(randint(1, 100))
     l.sort()
 
-    print(l)
     assert len(l) == 10
     assert l[0] < l[-1]
 
@@ -72,9 +76,6 @@ def test_unique_elements():
     l = [1, 2, 3, 4, 5, 5, 5, 6, 7, 8, 8, 9, 10, 10]
     # TODO удалите повторяющиеся элементы
     l = list(set(l))
-
-    print(l)
-
 
     assert isinstance(l, list)
     assert len(l) == 10
@@ -94,6 +95,7 @@ def test_dicts():
 
     d1 = zip(first, second)
     d = dict(d1)
+
     print(d)
 
     assert isinstance(d, dict)
