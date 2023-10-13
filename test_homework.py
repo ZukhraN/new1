@@ -56,14 +56,13 @@ def test_random_list():
     """
     Создайте список из 10 случайных чисел от 1 до 100 и отсортируйте его по возрастанию.
     """
-    from random import randint
+
 
     # TODO создайте список
 
-    l = list(range(9))
-
-    l.append(randint(1, 100))
+    l = [random.randint(1,100) for _ in range (10)]
     l.sort()
+    print(l)
 
     assert len(l) == 10
     assert l[0] < l[-1]
@@ -96,7 +95,7 @@ def test_dicts():
     d1 = zip(first, second)
     d = dict(d1)
 
-    print(d)
+    print(list(d.values()))
 
     assert isinstance(d, dict)
     assert len(d) == 5
